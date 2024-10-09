@@ -14,13 +14,18 @@ import java.io.Serializable;
 public class Favorito implements Serializable {
 
     @Id
-    @ManyToOne
-    @JoinColumn(name = "codigo_producto")
-    private Producto producto;
+    @Column(name = "codigo_producto")  // Especifica el nombre de la columna en la base de datos
+    private int codigoProducto;
 
     @Id
-    @ManyToOne
-    @JoinColumn(name = "codigo_usuario")
-    private Usuario usuario;
+    @Column(name = "codigo_usuario")  // Especifica el nombre de la columna en la base de datos
+    private int codigoUsuario;
 
+    @ManyToOne
+    @JoinColumn(name = "codigo_producto", insertable = false, updatable = false)
+    private Producto producto;
+
+    @ManyToOne
+    @JoinColumn(name = "codigo_usuario", insertable = false, updatable = false)
+    private Usuario usuario;
 }

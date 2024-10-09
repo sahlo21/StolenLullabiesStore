@@ -1,9 +1,11 @@
 package co.edu.uniquindio.proyecto.modelo.entidades;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Getter
@@ -13,6 +15,7 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 public class Administrador extends Persona implements Serializable  {
 
-
+    @OneToMany(mappedBy = "administrador")
+    private List<Producto> productos;
 
 }

@@ -10,8 +10,8 @@ import java.io.Serializable;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class FavoritoId implements Serializable {
 
-    private Long codigoProducto;
-    private Long codigoUsuario;
+    private int codigoProducto;
+    private int codigoUsuario;
 
 
 }

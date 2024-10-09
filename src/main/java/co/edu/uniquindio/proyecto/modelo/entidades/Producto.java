@@ -57,7 +57,8 @@ public class Producto implements Serializable {
     private List<DetalleCompra> detalle_compras;
     @ManyToOne
     private Tienda tienda;
-
+    @ManyToOne
+    private Administrador administrador;
 
 
 }
