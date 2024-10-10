@@ -25,12 +25,14 @@ public class Pedido implements Serializable {
     @NotNull
     @Column(nullable = false)
     private Double valor_total;
-    @NotNull
-    @Column(nullable = false)
-    private Mediopago medio_pago;
+    @OneToOne(mappedBy = "pedido", cascade = CascadeType.ALL) // Asegúrate de incluir cascade
+    private Pago pago; // Un pago asociado al pedido
     @ManyToOne
     private Usuario usuario;
     @OneToMany(mappedBy ="pedido")
-    private List<DetalleCompra> detalle_compras;
+    private List<DetallePedido> detalle_compras;
+
+    @ManyToOne
+    private Cupon cuponAplicado; // Cupón aplicado a la compra
 
 }

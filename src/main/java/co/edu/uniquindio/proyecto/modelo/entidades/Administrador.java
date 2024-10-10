@@ -16,6 +16,6 @@ import java.util.List;
 public class Administrador extends Persona implements Serializable  {
 
     @OneToMany(mappedBy = "administrador")
-    private List<Producto> productos;
+    private List<Producto> productosList;
 
 }

@@ -2,6 +2,8 @@ package co.edu.uniquindio.proyecto.modelo.entidades;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Positive;
 import lombok.*;
 
 import java.io.Serializable;
@@ -19,26 +21,28 @@ public class Pago implements Serializable {
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codigo;
-
+    @Positive(message = "El monto debe ser mayor que cero")
     @NotNull
     @Column(nullable = false)
     private double monto;
-
+    @PastOrPresent(message = "La fecha de pago no puede ser en el futuro")
     @NotNull
     @Column(nullable = false)
     private LocalDate fechaPago;
 
     @NotNull
-    @Column(nullable = false, length = 20)
-    private String metodoPago; // Por ejemplo, "Tarjeta", "PayPal", etc.
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Mediopago metodoPago;
 
     @NotNull
-    @Column(nullable = false, length = 15)
-    private String estadoPago; // Por ejemplo, "exitoso", "fallido"
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private EstadoPago estadoPago;
 
-    @ManyToOne
-    @JoinColumn(nullable = false)
-    private Pedido pedido;
+    @OneToOne
+    @JoinColumn(name = "pedido_codigo", nullable = false) // Especifica el nombre de la columna
+    private Pedido pedido; // Relación con el pedido
 
 }
 

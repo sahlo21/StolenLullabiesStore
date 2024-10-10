@@ -22,8 +22,7 @@ public class Categoria implements Serializable {
     @NotNull
     @Size(min = 1, max = 20)
     private String nombre;
-    @ManyToMany(mappedBy = "categorias")  // Categoría es la entidad inversa
-    private List<Producto> productos;
+
 
 
 }

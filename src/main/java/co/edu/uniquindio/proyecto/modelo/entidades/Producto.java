@@ -7,7 +7,6 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -54,11 +53,15 @@ public class Producto implements Serializable {
     @OneToMany(mappedBy = "producto")
     private List<Imagen> imagenes;
     @OneToMany(mappedBy ="producto")
-    private List<DetalleCompra> detalle_compras;
+    private List<DetallePedido> detalles_pedido;
     @ManyToOne
     private Tienda tienda;
     @ManyToOne
     private Administrador administrador;
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
+    private List<Pregunta> preguntas; // Lista de preguntas asociadas al producto
 
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
+    private List<Reseña> reseñas; // Lista de reseñas asociadas al producto
 
 }
