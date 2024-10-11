@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Reseña implements Serializable {
+public class Resena implements Serializable {
 
     @Id
     @EqualsAndHashCode.Include

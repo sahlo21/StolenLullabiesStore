@@ -25,8 +25,6 @@ public class Usuario extends Persona implements Serializable {
     @Size(min = 7, max = 15)
     private String telefono;
 
-    @OneToMany(mappedBy = "usuario")
-    private List<Comentario> comentarios;
 
     @OneToMany(mappedBy = "usuario")
     private List<Pedido> pedidos;
@@ -36,5 +34,5 @@ public class Usuario extends Persona implements Serializable {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
     private List<Pregunta> preguntas; // Lista de preguntas realizadas por el usuario
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-    private List<Reseña> reseñas; // Lista de reseñas realizadas por el usuario
+    private List<Resena> reseñas; // Lista de reseñas realizadas por el usuario
 }

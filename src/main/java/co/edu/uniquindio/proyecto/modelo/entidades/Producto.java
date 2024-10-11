@@ -47,21 +47,18 @@ public class Producto implements Serializable {
     private List<Categoria> categorias;
 
     @OneToMany(mappedBy = "producto")
-    private List<Comentario> comentarios;
-    @OneToMany(mappedBy = "producto")
     private List<Favorito> favoritos;
     @OneToMany(mappedBy = "producto")
     private List<Imagen> imagenes;
     @OneToMany(mappedBy ="producto")
     private List<DetallePedido> detalles_pedido;
-    @ManyToOne
-    private Tienda tienda;
+
     @ManyToOne
     private Administrador administrador;
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
     private List<Pregunta> preguntas; // Lista de preguntas asociadas al producto
 
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
-    private List<Reseña> reseñas; // Lista de reseñas asociadas al producto
+    private List<Resena> reseñas; // Lista de reseñas asociadas al producto
 
 }
