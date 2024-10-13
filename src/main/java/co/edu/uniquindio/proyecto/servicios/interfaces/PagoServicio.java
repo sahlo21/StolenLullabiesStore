@@ -1,20 +1,21 @@
 package co.edu.uniquindio.proyecto.servicios.interfaces;
 
+import co.edu.uniquindio.proyecto.modelo.entidades.EstadoPago;
 import co.edu.uniquindio.proyecto.modelo.entidades.Pago;
 
 import java.util.List;
 
 public interface PagoServicio {
 
-    Pago crearPago(Pago pago);
+    Pago crearPago(Pago pago)throws Exception;
 
 
-    Pago obtenerPagoPorId(Long id);
+    Pago obtenerPagoPorId(int id)throws Exception;
 
 
-    void cambiarEstadoPago(Long id, String nuevoEstado);
+    void cambiarEstadoPago(int id, EstadoPago nuevoEstado)throws Exception;
 
 
-    List<Pago> obtenerTodosLosPagosPorPedido(int codigoPedido);
+    List<Pago> obtenerPagoPorPedido(int codigoPedido)throws Exception;
 
 }

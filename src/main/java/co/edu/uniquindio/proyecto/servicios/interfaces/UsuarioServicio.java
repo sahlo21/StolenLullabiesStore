@@ -5,10 +5,10 @@ import co.edu.uniquindio.proyecto.modelo.entidades.Usuario;
 import java.util.List;
 
 public interface UsuarioServicio {
-    int registrarUsuario(Usuario usuario);
-    int actualizarUsuario(Usuario usuario);
-    int eliminarUsuario(Usuario usuario);
-    List<Usuario> listarUsuarios();
-    Usuario buscarUsuario(int id);
+    int registrarUsuario(Usuario usuario) throws Exception;
+    int actualizarUsuario(Usuario usuario)throws Exception;
+    int eliminarUsuario(Usuario usuario)throws Exception;
+    List<Usuario> listarUsuarios()throws Exception;
+    Usuario buscarUsuario(int id)throws Exception;
 
 }

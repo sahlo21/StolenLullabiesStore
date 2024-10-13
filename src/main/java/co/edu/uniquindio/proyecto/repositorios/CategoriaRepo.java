@@ -8,7 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface CategoriaRepo extends JpaRepository<Administrador, Integer> {
+public interface CategoriaRepo extends JpaRepository<Categoria, Integer> {
     // Consulta personalizada para buscar por nombre
     Optional<Categoria> findByNombre(String nombre);
+    Boolean existsByNombre(String nombre);
 }

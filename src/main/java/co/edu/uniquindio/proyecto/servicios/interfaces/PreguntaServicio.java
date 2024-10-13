@@ -5,12 +5,12 @@ import co.edu.uniquindio.proyecto.modelo.entidades.Pregunta;
 import java.util.List;
 
 public interface PreguntaServicio {
-    int registrarPregunta(Pregunta pregunta);
-    int actualizarPregunta(Pregunta pregunta);
-    int eliminarPregunta(int id);
-    Pregunta getPregunta(int id);
-    List<Pregunta> getPreguntas();
-    List<Pregunta> getPreguntasPorProducto(int idProducto);
-    List<Pregunta> getPreguntasPorUsuario(int idUsuario);
-    Pregunta responderPregunta(int idPregunta, String respuesta);
+    int registrarPregunta(Pregunta pregunta)throws Exception;
+    int actualizarPregunta(Pregunta pregunta)throws Exception;
+    int eliminarPregunta(int id)throws Exception;
+    Pregunta getPregunta(int id)throws Exception;
+    List<Pregunta> getPreguntas()throws Exception;
+    List<Pregunta> getPreguntasPorProducto(int idProducto)throws Exception;
+    List<Pregunta> getPreguntasPorUsuario(int idUsuario)throws Exception;
+    Pregunta responderPregunta(int idPregunta, String respuesta)throws Exception;
 }

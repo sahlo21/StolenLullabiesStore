@@ -9,14 +9,15 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Repository
-public interface CuponRepo extends JpaRepository<Administrador, Integer> {
-    // Método para encontrar un cupón por su código
+public interface CuponRepo extends JpaRepository<Cupon, Integer> {
     Cupon findByCodigo(String codigo);
 
-    // Puedes agregar más métodos según tus necesidades
-    // Por ejemplo, si necesitas encontrar cupones activos
     List<Cupon> findByActivo(Boolean activo);
 
-    // Método para encontrar cupones que no hayan expirado
     List<Cupon> findByFechaExpiracionAfter(LocalDate fechaActual);
+
+    Boolean existsByCodigo(String codigo);
+
+    // Alternativamente, buscar cupones usando el ID del producto
+    List<Cupon> findByProductosValidos_Codigo(int productoId);
 }
