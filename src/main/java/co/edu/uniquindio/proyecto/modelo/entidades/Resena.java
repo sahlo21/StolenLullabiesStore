@@ -40,6 +40,6 @@ public class Resena implements Serializable {
     @Max(5)
     @Column(nullable = false)
     private int calificacion; // Calificación del 1 al 5
-
+    @NotNull
     private LocalDate fechaCreacion; // Fecha de creación
 }

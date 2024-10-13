@@ -29,7 +29,7 @@ public class Producto implements Serializable {
     private int unidades;
     @NotNull
     @Column(nullable = false, length = 50)
-    @Size(min = 1, max = 50)
+    @Size(min = 1, max = 100)
     private String descripcion;
     @NotNull
     @Column(nullable = false)
@@ -39,10 +39,10 @@ public class Producto implements Serializable {
     private boolean activo;
     @NotNull
     @Column(nullable = false)
-    private LocalDate fecha_creacion;
+    private LocalDate fechaCreacion;
     @NotNull
     @Column(nullable = false)
-    private LocalDate fecha_limite;
+    private LocalDate fechaLimite;
     @ManyToMany
     private List<Categoria> categorias;
 

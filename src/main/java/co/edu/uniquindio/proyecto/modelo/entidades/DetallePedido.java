@@ -20,9 +20,6 @@ public class DetallePedido implements Serializable {
     @NotNull
     @Column(nullable = false)
     private int unidades;
-    @NotNull
-    @Column(nullable = false)
-    private int precio_producto;
     @ManyToOne
     private Pedido pedido;
     @ManyToOne

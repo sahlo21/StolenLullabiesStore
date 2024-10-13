@@ -37,8 +37,8 @@ public class Pregunta implements Serializable {
 
     @Column(length = 500)
     private String respuesta; // Respuesta opcional
-
+    @Column(nullable = false)
     private LocalDate fechaCreacion; // Fecha de creación
-
+    @Column(nullable = false)
     private LocalDate fechaRespuesta; // Fecha de respuesta opcional
 }

@@ -21,10 +21,10 @@ public class Pedido implements Serializable {
     private int codigo;
     @NotNull
     @Column(nullable = false)
-    private LocalDate fecha_creacion;
+    private LocalDate fechaCreacion;
     @NotNull
     @Column(nullable = false)
-    private Double valor_total;
+    private Double valorTotal;
     @OneToOne(mappedBy = "pedido", cascade = CascadeType.ALL) // Asegúrate de incluir cascade
     private Pago pago; // Un pago asociado al pedido
     @ManyToOne
